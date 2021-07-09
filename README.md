@@ -4,7 +4,7 @@ This is a template to be used for the https://github.com/HerrNamenlos123/Battery
 
 ## Requirements
 
- - Microsoft Visual Studio 2019 (Other IDEs can be used by altering `generate-win.bat`
+ - Microsoft Visual Studio 2019 (Other IDEs can be used by altering `generate-win.bat`)
  - [BatteryEngine](https://github.com/HerrNamenlos123/BatteryEngine) -> Clone, compile and install everything
 
 ## How to use
