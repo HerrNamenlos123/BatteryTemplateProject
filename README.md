@@ -14,4 +14,4 @@ This is a template to be used for the https://github.com/HerrNamenlos123/Battery
  - Doubleclick `generate-win.bat`, enter a project name and start developing :P
 
 Additionally:
-When files are added, simply re-run `generate-win.bat` and they will be updated in the IDE.
+When files are added, simply re-run `generate-win.bat` and they will added to the Solution explorer.
