@@ -10,8 +10,8 @@ This is a template to be used for the https://github.com/HerrNamenlos123/Battery
 
 ## How to use
 
- - Open a command prompt within the target directory
- - `git clone https://github.com/HerrNamenlos123/BatteryTemplateProject.git .`
+ - Open a command prompt within the target directory: `git clone https://github.com/HerrNamenlos123/BatteryTemplateProject.git .`
+ - Optionally: Use the green button to generate your derived repository and then clone that instead
  - Doubleclick `generate-win.bat`, enter a project name and start developing :P
  - BUT: Make sure not to commit back into this repo as this is a template!
 
