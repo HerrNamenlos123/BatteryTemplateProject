@@ -12,3 +12,6 @@ This is a template to be used for the https://github.com/HerrNamenlos123/Battery
  - Open a command prompt in the target directory
  - `git clone https://github.com/HerrNamenlos123/BatteryTemplateProject.git .`
  - Doubleclick `generate-win.bat`, enter a project name and start developing :P
+
+Additionally:
+When files are added, simply re-run `generate-win.bat` and they will be updated in the IDE.
