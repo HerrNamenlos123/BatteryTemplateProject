@@ -4,7 +4,8 @@ This is a template to be used for the https://github.com/HerrNamenlos123/Battery
 
 ## Requirements
 
- - Microsoft Visual Studio 2019 (Other IDEs can be used by altering `generate-win.bat`)
+ - [git](https://git-scm.com/downloads) - For cloning, obviously
+ - [Microsoft Visual Studio 2019](https://visualstudio.microsoft.com/de/downloads/) - Other IDEs can be used by altering `generate-win.bat`
  - [BatteryEngine](https://github.com/HerrNamenlos123/BatteryEngine) -> Must be compiled and installed before continuing
 
 ## How to use
