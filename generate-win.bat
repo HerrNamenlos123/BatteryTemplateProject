@@ -20,7 +20,7 @@ set _generator=vs2019
 
 :: ===================================================================
 set _projectfile=
-for /f "delims=" %%F in ('dir %~dp0*.sln /b /o-n') do set _projectfile=%%F
+for /f "delims=" %%F in ('dir "%~dp0*.sln" /b /o-n') do set _projectfile=%%F
 
 IF [%_projectfile%] == [] (
     set /p _projectname="Enter the project name: "
@@ -28,7 +28,9 @@ IF [%_projectfile%] == [] (
     set _projectname=%_projectfile:~0,-4%
 )
 
+if not "%_projectname%"=="%_projectname: =%" echo [91mThe project name must not contain spaces![0m && Pause && exit 1
+
 echo Generating project '%_projectname%'
 
-%~dp0premake5\windows\premake5.exe %_generator% --file=%~dp0premake5.lua --projectname=%_projectname% && start %_projectname%.sln
+call "%~dp0premake5\windows\premake5.exe" %_generator% --file="%~dp0premake5.lua" --projectname=%_projectname% && start %_projectname%.sln
 Timeout 5
