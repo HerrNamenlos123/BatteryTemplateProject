@@ -27,7 +27,7 @@ public:
 
 	}
 
-	void OnImGuiUpdate() override {		// Called every frame before render, only for calculations
+	void OnImGuiUpdate() override {		// Called every frame before render, only for logic
 
 	}
 

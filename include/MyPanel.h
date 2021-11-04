@@ -16,14 +16,14 @@ public:
 		Battery::GetMainWindow().SetTitle(currentTitle);
 	}
 
-	void OnUpdate() override {	// Called every frame before render, only for calculations
+	void OnUpdate() override {	// Called every frame before render, only for logic
 
 		size.y = Battery::GetMainWindow().GetSize().y;	// This continually overwrites the vertical size with the vertical window size
-														// -> Panel always spans across the entire window height when the window is resized
+														// -> When you resize the window vertically, the panel will adjust because of that
 
-		fpsFiltered = fpsFiltered * 0.95 + Battery::GetApp().framerate * 0.05;
+		fpsFiltered = fpsFiltered * 0.95 + Battery::GetApp().framerate * 0.05;	// Simple filter
 
-		if (std::string(titleBuffer) != currentTitle) {	// Only update the title when it's changed
+		if (std::string(titleBuffer) != currentTitle) {		// Only update the title when it's changed
 			currentTitle = titleBuffer;
 			Battery::GetMainWindow().SetTitle(currentTitle);
 			LOG_DEBUG("Title was updated to '{}'", currentTitle);
