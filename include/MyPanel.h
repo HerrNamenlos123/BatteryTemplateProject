@@ -36,7 +36,7 @@ public:
 		ImGui::PushFont(fonts->openSans25);
 
 		ImGui::Text("FPS: %.1f", fpsFiltered);
-		ImGui::Text("Runtime: %fs", Battery::TimeUtils::GetRuntime());
+		ImGui::Text("Runtime: %fs", Battery::GetRuntime());
 		
 		if (ImGui::Button("My Button")) {
 			LOG_INFO("My Button was pressed!");
