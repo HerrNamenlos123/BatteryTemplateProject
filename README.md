@@ -12,7 +12,5 @@ This is a template to be used for the https://github.com/HerrNamenlos123/Battery
  - Create the target folder with the name of your project
  - Open a command prompt within that target folder and run:  
    `git clone --recursive https://github.com/HerrNamenlos123/BatteryTemplateProject.git .` or replace the github link with your own, using the green template button.
- - Now clone the BatteryEngine:  
-   `mkdir modules\BatteryEngine && cd modules\BatteryEngine && git clone https://github.com/HerrNamenlos123/BatteryEngine.git . --recursive`
  - Close the command prompt
  - In the file explorer double-click `generate-win.bat`, enter a project name and start developing :P
