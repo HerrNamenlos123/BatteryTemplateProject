@@ -52,18 +52,21 @@ project (projectName)
         kind "ConsoleApp"
         runtime "Debug"
         symbols "On"
+        linkoptions { '/NODEFAULTLIB:libcmt.lib', '/NODEFAULTLIB:msvcrt.lib', '/NODEFAULTLIB:msvcrtd.lib' }
 
     filter "configurations:Release"
         defines { "NDEBUG", "NDEPLOY", "ALLEGRO_STATICLINK" }
         kind "ConsoleApp"
         runtime "Release"
         optimize "On"
+        linkoptions { '/NODEFAULTLIB:libcmtd.lib', '/NODEFAULTLIB:msvcrt.lib', '/NODEFAULTLIB:msvcrtd.lib' }
 
     filter "configurations:Deploy"
         defines { "NDEBUG", "DEPLOY", "ALLEGRO_STATICLINK" }
         kind "WindowedApp"
         runtime "Release"
         optimize "On"
+        linkoptions { '/NODEFAULTLIB:libcmtd.lib', '/NODEFAULTLIB:msvcrt.lib', '/NODEFAULTLIB:msvcrtd.lib' }
 
     filter {}
 

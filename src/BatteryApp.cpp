@@ -41,3 +41,4 @@ void BatteryApp::OnEvent(Battery::Event* e) {		// Called when an event arrives
 Battery::Application* Battery::CreateApplication() {	// DO NOT ALTER!
 	return new BatteryApp();
 }
+
