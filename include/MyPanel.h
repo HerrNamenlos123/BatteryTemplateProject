@@ -34,12 +34,11 @@ public:
 	}
 
 	void OnRender() override {	// Called every frame after update, this is within an ImGui window -> call ImGui widgets directly
-		auto fonts = GetFontContainer<FontContainer>();		// Here you can access the fonts from Fonts.h
 		
 		ImGui::PushFont(fonts->openSans18);
 
 		ImGui::Text("FPS: %.1f", fpsFiltered);
-		ImGui::Text("Runtime: %fs", Battery::TimeUtils::GetRuntime());
+		ImGui::Text("Runtime: %fs", Battery::GetRuntime());
 		
 		if (ImGui::Button("My Button")) {
 			LOG_INFO("My Button was pressed!");
@@ -51,7 +50,7 @@ public:
 		ImGui::InputText("##title", titleBuffer, sizeof(titleBuffer));
 		ImGui::PopItemWidth();
 		ImGui::SameLine();
-		ShowHelpMarker("The title is updated whenever the content changes", fonts->openSans18);
+		ShowHelpMarker("The title is updated whenever the content changes", Fonts::openSans18);
 		
 		//ImGui::ShowDemoWindow();
 
