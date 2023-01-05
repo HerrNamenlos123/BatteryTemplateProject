@@ -4,14 +4,17 @@
 #include "Fonts.h"
 
 class MyPanel : public Battery::ImGuiPanel<> {
+public:
 
 	// Here you can store data which is specific to this panel
 	float fpsFiltered = 0;
 	std::string currentTitle;
 	char titleBuffer[64] = "Battery Application";
 
-public:
-	MyPanel() : Battery::ImGuiPanel<>("MyPanel", { 0, 0 }, { 400, 0 }) {	// Specify a unique name and the position and size of the panel
+	int sampling = 8;
+	float width = 5.f;
+
+	MyPanel() : Battery::ImGuiPanel<>("MyPanel", { 0, 0 }, { 300, 0 }) {	// Specify a unique name and the position and size of the panel
 		currentTitle = titleBuffer;
 		Battery::GetMainWindow().SetTitle(currentTitle);
 	}
@@ -33,7 +36,7 @@ public:
 	void OnRender() override {	// Called every frame after update, this is within an ImGui window -> call ImGui widgets directly
 		auto fonts = GetFontContainer<FontContainer>();		// Here you can access the fonts from Fonts.h
 		
-		ImGui::PushFont(fonts->openSans25);
+		ImGui::PushFont(fonts->openSans18);
 
 		ImGui::Text("FPS: %.1f", fpsFiltered);
 		ImGui::Text("Runtime: %fs", Battery::TimeUtils::GetRuntime());
@@ -44,13 +47,16 @@ public:
 
 		ImGui::Text("Window title");
 		ImGui::SameLine();
-		ImGui::PushItemWidth(200);
+		ImGui::PushItemWidth(150);
 		ImGui::InputText("##title", titleBuffer, sizeof(titleBuffer));
 		ImGui::PopItemWidth();
 		ImGui::SameLine();
 		ShowHelpMarker("The title is updated whenever the content changes", fonts->openSans18);
 		
 		//ImGui::ShowDemoWindow();
+
+		ImGui::SliderInt("Sampling", &sampling, 0, 16);
+		ImGui::SliderFloat("Width", &width, 0.f, 20.f);
 
 		ImGui::PopFont();
 	}
