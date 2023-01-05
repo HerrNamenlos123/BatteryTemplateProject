@@ -39,6 +39,7 @@ uint8_t makeAddress(uint32_t* address, uint8_t readAddress, uint8_t writeAddress
 }
 
 class MyPanel : public Battery::ImGuiPanel<> {
+public:
 
 	uint8_t registerSize = 32;
 	uint8_t numberOfRegisters = 16;
@@ -50,8 +51,12 @@ class MyPanel : public Battery::ImGuiPanel<> {
 	uint8_t bitss = 0;
 	uint8_t bytes = 0;
 
-public:
-	MyPanel() : Battery::ImGuiPanel<>("MyPanel", { 0, 0 }, { 400, 0 }) {	// Specify a unique name and the position and size of the panel
+	int sampling = 8;
+	float width = 5.f;
+
+	MyPanel() : Battery::ImGuiPanel<>("MyPanel", { 0, 0 }, { 300, 0 }) {	// Specify a unique name and the position and size of the panel
+		currentTitle = titleBuffer;
+		Battery::GetMainWindow().SetTitle(currentTitle);
 	}
 
 	void OnUpdate() override {	// Called every frame before render, only for logic
